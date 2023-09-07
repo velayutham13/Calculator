@@ -1,0 +1,48 @@
+body
+{
+  background-color:aliceblue;
+}
+h1{
+  text-align: center;
+  color: black;
+}
+.container
+{
+  height: 80vh;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calculator
+{
+    background-color:aqua;
+    padding: 15px;
+    border-radius: 5px;
+    display:grid;
+    grid-template-columns: repeat(4,68px);
+}
+input
+{
+    grid-column: span 4;
+    height: 70px;
+    width: 260px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(70, 69, 69);
+    font-size: 50px;
+    text-align: end;
+}
+button
+{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 10%;
+    margin: 8px;
+    font-size: 16px;
+}
+.equal
+{
+  width: 115px;
+  border-radius: 10px;
+}

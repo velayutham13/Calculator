@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>     
+     <title>Calculator</title>
+     <h1>Calculator</h1>
+</head>
+<body>
+     <link rel="stylesheet" href="calculator.css">
+     
+     <div class="container">
+      <div class="calculator">  
+       <input type="text" placeholder="0" id="output">
+        <button onclick="Clear()">CL</button>
+        <button onclick="del()">DEL</button>
+        <button onclick="display('%')">%</button>
+        <button onclick="display('/')">/</button>
+
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="display('*')">*</button>
+
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button onclick="display('-')">-</button>
+
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button onclick="display('+')">+</button>
+
+        <button onclick="display('.')">.</button>
+        <button onclick="display('0')">0</button>
+       
+        <button onclick="Calculate()"class="equal">=</button>
+    
+     </div>
+    
+ </div>
+
+ <script>
+
+     let outputscreen=" ";
+     
+     function display(num)
+        {
+         
+         outputscreen +=num;
+         document.getElementById("output").value= outputscreen;
+     
+        }
+     
+     
+     function del()
+        {
+     
+         outputscreen=" ";
+         output.value=output.value.slice(0,-1);
+     
+        }
+     
+     
+     function Calculate()
+        {
+         
+         let output;
+         if(outputscreen.includes("+"))
+         {
+             let num=outputscreen.split("+");
+             output=parseFloat(num[0])+ parseFloat(num[1]);
+     
+         }
+     
+         else if(outputscreen.includes("-"))
+         {
+             let num=outputscreen.split("-");
+             output=parseFloat(num[0])- parseFloat(num[1]);    
+         }
+     
+         else if(outputscreen.includes("*"))
+         {
+             let num=outputscreen.split("*");
+             output=parseFloat(num[0])* parseFloat(num[1]);    
+         }
+     
+         else if(outputscreen.includes("/"))
+         {
+             let num=outputscreen.split("/");
+             output=parseFloat(num[0])/ parseFloat(num[1]);    
+         }
+     
+         else if(outputscreen.includes("%"))
+         {
+             let num=outputscreen.split("%");
+             output=parseFloat(num[0])% parseFloat(num[1]);    
+         }   
+     
+         else if(outputscreen.includes(''))
+           
+          {
+               output=("UNDIFIED");
+          }
+     
+           document.getElementById('output').value = output;
+           outputscreen = output.toString();
+       }
+     
+     function Clear()
+       {
+         
+         outputscreen='';
+         document.getElementById("output").value = " ";
+     
+       }
+     
+     </script>
+</body>
+</html>
